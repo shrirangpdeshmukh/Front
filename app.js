@@ -23,14 +23,11 @@ const app = express();
 
 const deleteArchiveCron = require("./cron/deleteArchived");
 
-app.use(
-  cors({
-    // origin: "http://localhost:3000",
-    credentials: true,
-  })
-);
+//CORS Request
+app.use(cors({ origin: true, credentials: true }));
 
-// app.options("*", cors());
+app.options("*", cors());
+
 app.set("view engine", "ejs");
 
 app.use(helmet());
@@ -41,7 +38,14 @@ app.use(xss());
 app.use(express.json());
 app.use(cookieParser());
 
-//CORS Request
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 //REQUEST LOGGER
 if (NODE_ENV !== "production") {
@@ -49,9 +53,6 @@ if (NODE_ENV !== "production") {
 }
 
 deleteArchiveCron.start();
-// cronJob.start();
-//ROUTES
-//"/api/auth"
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);

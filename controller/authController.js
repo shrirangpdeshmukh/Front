@@ -24,11 +24,11 @@ const createSendToken = async (user, statusCode, res) => {
       ),
       // httpOnly: true,
     };
-    if (NODE_ENV == "production") {
-      cookieOptions.secure = true;
-    }
+    // if (NODE_ENV == "production") {
+    //   cookieOptions.secure = true;
+    // }
     res.cookie("jwt", token, cookieOptions);
-
+    
     res.status(statusCode).json({
       status: "success",
       token,
@@ -104,6 +104,7 @@ exports.updatePassword = async (req, res, next) => {
       currentPassword: req.body.password,
       newPassword: req.body.newPassword,
     };
+    // console.log(data);
     // if (true) return next(new AppError("Test went Wrong", 500));
     await updatePassword(data.id, data.currentPassword, data.newPassword, next);
 

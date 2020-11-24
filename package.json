@@ -9,7 +9,7 @@
     "dev": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client",
-    "dummy": "npm run build --prefix client && nodemon server.js"
+    "dummy": "npm install --prefix client && nodemon server.js"
   },
   "author": "P. Aashay, B. Navaneeth, D. Shrirang, P. Rahul",
   "license": "ISC",
