@@ -1,0 +1,19 @@
+.FormBody{
+    border: 2px solid black;
+    margin : 25px auto;
+    width : 80%;
+    border-radius: 3px;
+    align-content: center;
+}
+
+.Form {
+    margin: auto;
+    text-align: center;
+}
+
+.TextArea {
+    width : 90%;
+    margin : 0 10px 10px 10px;
+    height : 200px;
+    resize : none
+}

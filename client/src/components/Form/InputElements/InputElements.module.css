@@ -1,0 +1,36 @@
+.FormGroup {
+  position: relative;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+.Input input:-webkit-input-placeholder,
+.Input input:-moz-placeholder,
+.Input input:-moz-placeholder,
+.Input input:-ms-input-placeholder {
+  font-size: 1.5em;
+}
+
+.Input input:focus {
+  outline: none;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -o-box-shadow: none !important;
+  -ms-box-shadow: none !important;
+}
+
+.Input {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.Input {
+  width: 100%;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #999;
+  padding: 6px 30px;
+  font-family: Poppins;
+  box-sizing: border-box;
+  font-size: 1.1em;
+}
