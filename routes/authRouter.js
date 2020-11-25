@@ -7,10 +7,10 @@ const {
   updatePassword,
   logout,
 } = require("../controller/authController");
-const { fakeSignup } = require("./../script");
+// const { fakeSignup } = require("./../script");
 const router = express.Router();
 
-router.post("/fake/signUp", fakeSignup);
+// router.post("/fake/signUp", fakeSignup);
 //LOGIN
 router.post("/login", login);
 
