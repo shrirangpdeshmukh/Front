@@ -66,7 +66,9 @@ class AllUsers extends Component {
                   return (
                     <ListGroupItem
                       key={user.id}
-                      onClick={() => this.props.history.push(`/admin/user/${user.id}`)}
+                      onClick={() =>
+                        this.props.history.push(`/admin/user/${user.id}`)
+                      }
                       style={{
                         borderTop: 0,
                         borderRight: 0,
@@ -78,8 +80,7 @@ class AllUsers extends Component {
                       <Badge>{user.designation}</Badge>
                     </ListGroupItem>
                   );
-                }
-                else return null;
+                } else return null;
               })}
             </ListGroup>
           </div>
@@ -95,7 +96,7 @@ class AllUsers extends Component {
       data = <Spinner />;
     }
 
-    if (this.state.users.length != 0) {
+    if (this.state.users.length !== 0) {
       data = (
         <Grid fluid>
           <Row>
